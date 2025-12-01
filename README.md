@@ -30,13 +30,21 @@ Assuming you have done the step one
 
 ### Check whether the wifi and bluetooth works or not.
 if it wont work .The reson is due to the boot.img file you patched has compactablity issues 
+<img width="435" height="964" alt="image" src="https://github.com/user-attachments/assets/90f7f5a2-4b88-4fa0-aa00-7cedca52e9da" />
+<img width="1260" height="530" alt="image" src="https://github.com/user-attachments/assets/e30ddfbc-31dc-4ef6-b69b-d8812068b6f1" />
+
 find the software version of the preinstalled software it somewhat looks like this PD1987F_EX_A_6.70.72
 compare them with the zipfile you downloaded in my case the latest vertion given by vivo on their site is PD1987F_EX_A_6.70.72 and the pre installed frimware is this PD1987F_EX_A_6.71.42 which is greater than the official site has given
 that caused the problem 
 #### If the installed version is less than the official version 
+
+
 * Step 1: Move the zip file (offical frimware from vivo) to your phone (you can use adb or just use the filemanager on the system(pc) and open terminal and type ```adb reboot recovery```
 * Step 2: Select install software and click local install click the zip file you just moved to your phone
 * Step 3: do all the step from ``` In Rooting vivo phones ```
 * Done
 #### If the installed version is Greater than the official version 
-  
+  * Step 1: Get the recovery.img file from the zipfile
+  * Step 2:Build TWRP for that device using https://www.hovatek.com/twrpbuilder/
+  * Step 3:Install the new recovery.img by using ```fastboot flash recovery recovery.img```
+    (To Do0 
