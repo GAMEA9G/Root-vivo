@@ -22,7 +22,7 @@ Assuming you have done the step one
 * Step 2: Unzip the file and sent the boot.img and vbmeta.img file it to your vivo device (you can use adb or just use the filemanager on the system(pc)
 ### Step 3 : Patch boot.img file 
 * Step 1: sent the boot.img and vbmeta.img files(from the zip file you just unzipped) to your vivo device (you can use adb or just use the filemanager on the system(pc)
-* Step 2: Download magisk from https://github.com/4accccc/vivo-Magisk-suu because the original magisk is blocked by the kernal of vivo
+* Step 2: use this kernal patch tool https://github.com/4accccc/vivo-4.x-kernel-autopatch for making the boot.img rootable 
 * Step 3: open the app and select the boot.img file 
 * Step 4: Get the new patched file from the device (you can use adb or just use the filemanager on the system(pc))
 * Step 5: Open terminal(cmd,power shell, kitty,etc) and run ```adb reboot bootloader``` and run ```fastboot flash boot magisk_patched.img``` replace magisk_patched.img to your magisk patched image and run ```fastboot reboot```
@@ -46,5 +46,13 @@ that caused the problem
 #### If the installed version is Greater than the official version 
   * Step 1: Get the recovery.img file from the zipfile
   * Step 2:Build TWRP for that device using https://www.hovatek.com/twrpbuilder/
-  * Step 3:Install the new recovery.img by using ```fastboot flash recovery recovery.img```
-    (To Do0 
+  * Step 3:Install the new recovery.img by using ```fastboot flash recovery recovery.img`
+  * step 4: run adb reboot recovery
+  * step 5: some times it shows an black screen just press the power button to see its ui
+  * step 5: open mount and click dissable mtp which make it connected as an adb device on your pc conform it by running adb devices
+  * step 6: copy the boot file from the phone to pc . open advanced and open file manager and find the path of the boot file it may be like /dev/block/bootdevice/by-name/boot
+  * step 7: run ```adb pull <boot_file_path  . ```
+  * step 8: then your running folder should contain a file named boot and rename the file to boot.img
+  * step 9: do step 3 : patch boot.img file from before insted of using boot.img from the zip file use the new boot.img
+
+
